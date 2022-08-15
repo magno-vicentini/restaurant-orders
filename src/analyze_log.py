@@ -1,5 +1,6 @@
 import csv
 
+
 def most_request_food_maria(data):
     request_foods_maria = list()
     foods_quantity_request = dict()
@@ -11,8 +12,11 @@ def most_request_food_maria(data):
             foods_quantity_request[food] += 1
         else:
             foods_quantity_request[food] = 1
-    most_request = max(foods_quantity_request, key=lambda f: foods_quantity_request[f])
+    most_request = max(
+        foods_quantity_request, key=lambda f: foods_quantity_request[f]
+    )
     return most_request
+
 
 def arnold_hamburger_requests(data):
     hamburguers = 0
@@ -20,6 +24,7 @@ def arnold_hamburger_requests(data):
         if info[0] == 'arnaldo' and info[1] == 'hamburguer':
             hamburguers += 1
     return hamburguers
+
 
 def foods_joao_never_request(data):
     requests_foods = set()
@@ -31,6 +36,7 @@ def foods_joao_never_request(data):
     foods_never_request = requests_foods.symmetric_difference(joao_requests)
     return foods_never_request
 
+
 def days_joão_not_be_present(data):
 
     all_days = set()
@@ -41,6 +47,7 @@ def days_joão_not_be_present(data):
             joao_days.add(info[2])
     days_did_not_present = all_days.symmetric_difference(joao_days)
     return days_did_not_present
+
 
 def analyze_log(path_to_file):
     try:
